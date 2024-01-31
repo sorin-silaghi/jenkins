@@ -6,7 +6,7 @@ pipeline {
         booleanParam(name: 'CLEAR_DB', defaultValue: false, description: 'Clear the environment DB before deployment')
     }
     environment {
-      BRANCH_NAME = '8.5'
+      BRANCH_NAME = '${params.DEPLOY_PARAM_ENV}'
     }
     stages {
         stage('Build') {
