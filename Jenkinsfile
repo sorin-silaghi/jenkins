@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Deploy') {
             when {
-              expression { BRANCH_NAME ==~ /(main)/ || params.DEPLOY_PARAM_ENV ==~ /(demo|prod)/  }
+              expression { BRANCH_NAME ==~ /(none)/ || params.DEPLOY_PARAM_ENV ==~ /(demo|prod)/  }
             }
             steps {
                 echo 'Deploying....'
