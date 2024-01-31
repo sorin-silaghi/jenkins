@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building.. ${params.DEPLOY_PARAM_ENV}'
+                echo 'Building.. ${DEPLOY_PARAM_ENV}'
             }
         }
         stage('Test') {
