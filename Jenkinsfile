@@ -18,6 +18,11 @@ pipeline {
             }
         }
         stage('Deploy') {
+            when {
+                expression {
+                   return params.DEPLOY_PARAM_ENV == 'dev' || params.DEPLOY_PARAM_ENV == 'demo' || params.DEPLOY_PARAM_ENV == 'prod'
+                }
+            }
             steps {
                 echo 'Deploying....'
             }
