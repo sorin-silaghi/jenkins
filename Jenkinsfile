@@ -2,13 +2,14 @@ pipeline {
     agent any
 
     parameters {
-        choice(name: 'DeploymentEnv', choices: ['none', 'dev', 'demo', 'prod'], description: 'Pick the environment you want to deploy to')
+        choice(name: 'DEPLOY_PARAM_ENV', choices: ['none', 'dev', 'demo', 'prod'], description: 'Pick the environment you want to deploy to. Use none if you don\'t want to deploy anywhere')
+        booleanParam(name: 'CLEAR_DB', defaultValue: false, description: 'Clear the environment DB before deployment')
     }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building.. ${params.DeploymentEnv}'
+                echo 'Building.. ${params.DEPLOY_PARAM_ENV}'
             }
         }
         stage('Test') {
