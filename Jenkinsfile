@@ -12,6 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building.. ${BRANCH_NAME}'
+                sh 'printenv'
             }
         }
         stage('Test') {
