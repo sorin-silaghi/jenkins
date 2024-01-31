@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building.. ${Greeting}'
+                echo 'Building.. ${params.Greeting}'
             }
         }
         stage('Test') {
