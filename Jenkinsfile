@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building.. ${DEPLOY_PARAM_ENV}'
+                echo 'Building.. ${BRANCH_NAME}'
             }
         }
         stage('Test') {
