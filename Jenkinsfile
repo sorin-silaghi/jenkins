@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     parameters {
-        string(name: 'Greeting', defaultValue: 'Hello', description: 'How should I greet the world?')
+        choice(name: 'DeploymentEnv', choices: ['none', 'dev', 'demo', 'prod'], description: 'Pick the environment you want to deploy to')
     }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building.. ${params.Greeting}'
+                echo 'Building.. ${params.DeploymentEnv}'
             }
         }
         stage('Test') {
